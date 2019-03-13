@@ -9,30 +9,46 @@ import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { CostumerPage } from '../pages/costumer/costumer';
 import { PipesModule } from '../pipes/pipes.module';
+import { CreateAccountPage } from '../pages/create-account/create-account';
+import { StudentsServiceProvider } from '../providers/students-service/students-service';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginProvider } from '../providers/login/login';
+import { LoginProviderMock } from '../mock/loginProviderMock';
+import { EventsProvider } from '../providers/events/events';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AboutPage,
-    CostumerPage
+    CostumerPage,
+    CreateAccountPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    PipesModule
+    PipesModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     AboutPage,
-    CostumerPage
+    CostumerPage,
+    CreateAccountPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    StudentsServiceProvider,
+    // {
+    //   provide:LoginProvider,
+    //   useClass: LoginProviderMock
+    // }
+    LoginProvider,
+    EventsProvider
   ]
 })
 export class AppModule {}

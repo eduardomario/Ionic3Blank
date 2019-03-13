@@ -21,7 +21,8 @@
             <ion-input type="password" formControlName="pwd"></ion-input>
           </ion-item>
         <br>
-        <button ion-button [color]="loginForm.valid ? 'primary': 'danger'" (click)="login()" round>Login</button>
+        <button ion-button (click)="login()" [color]="loginForm.valid ? 'primary': 'danger'" round [disabled]="!loginForm.valid">Login</button>
+        <button ion-button (click)="createUser()" color="secondary" round>Create Account</button>
         </form>
       
 
