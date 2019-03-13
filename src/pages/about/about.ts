@@ -17,6 +17,7 @@ export class AboutPage {
 
   user:string;
   data:any;
+  colorLabel: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.data = this.navParams.data;
@@ -29,7 +30,10 @@ export class AboutPage {
 
   goCostumer(){
     console.log('goToCostumer');
-    this.navCtrl.push(CostumerPage);
+    //this.navCtrl.push(CostumerPage);
+    setTimeout(() => {
+      this.colorLabel = 'danger';
+    },3*1000)
   }
 
   logout(){

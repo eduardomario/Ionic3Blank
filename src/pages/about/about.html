@@ -12,12 +12,38 @@
 
 <ion-content padding>
   <div class="wrapper">
+    <div class="wrapper-info"
+    *ngFor="let course of data.cursos | slice:0:3; let i = index;"
+    [ngClass]="{'course-one': i == 0,'course-two': i == 1,'course-three': i == 2}">
+      <h1>Curso: {{course}}</h1>
+      <h1>Nombre: {{data.user | myPipe:'Sin Nombre'}}</h1>
+      <h1>Dia: {{data.date | date:"dd/MMMM/yyyy"}}</h1>
+      <h1>Cantidad: {{data.money | currency:'USD'}}</h1>
+      <br>
+    </div>
+  </div>
+  
+  <!-- <div class="wrapper">
     <h1>{{data.date | date:"dd/MMMM/yyyy"}}</h1>
     <h1>Cantidad: {{data.money | currency:'USD'}}</h1>  
     <h1>Cantidad: {{data.money | number: '3.5'}}</h1> 
     <button ion-button (click)="goCostumer()" color="curso" round>Costumer</button>
     <button ion-button (click)="logout()" color="danger" round>Home</button>
-      
-  </div>
+    <h1 *ngFor="let course of data.cursos; let i = index">{{course}} - {{i}}</h1>
+    <ion-list>
+      <ion-item>
+        <ion-label>Cursos</ion-label>
+        <ion-select [(ngModel)]="cursos" multiple="false" cancelText="Nah" okText="Okay!">
+          <ion-option *ngFor="let course of data.cursos" value="{{course}}" selected="false">{{course}}</ion-option>            
+        </ion-select>
+      </ion-item>
+    </ion-list>   
+    <ion-item *ngFor="let course of data.cursos">
+      <ion-label [color]="colorLabel">{{course}}</ion-label>
+    </ion-item>   
+    <ion-item *ngFor="let course of data.cursos; let i = index">
+      <ion-label [color]="(i%2)==0 ? 'primary':'danger'">{{course}}</ion-label>
+    </ion-item>  
+  </div> -->
      
 </ion-content>

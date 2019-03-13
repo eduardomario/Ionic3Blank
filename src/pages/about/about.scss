@@ -3,4 +3,36 @@ page-about {
         display:flex;
         flex-direction: column;
     }
+
+    .wrapper-info{
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        margin: 20px;
+    }
+
+    .course-one{
+        border-radius: 5px;
+        border-left-style: solid;
+        border-left-width: 5px;
+        border-left-color: color($colors,primary);
+        background-color: color($colors,primary);
+    }
+    
+    .course-two{
+        border-radius: 5px;
+        border-left-style: solid;
+        border-left-width: 5px;
+        border-left-color: color($colors,secondary);
+        background-color: color($colors,secondary);
+    }
+
+    .course-three{
+        border-radius: 5px;
+        border-left-style: solid;
+        border-left-width: 5px;
+        border-left-color: color($colors,danger);
+        background-color: color($colors,danger);
+    }
 }

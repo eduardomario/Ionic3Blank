@@ -9,7 +9,23 @@
 <ion-content padding>
   
     <h1>Curso Ionic 3</h1>
-      <div class="wrapper">
+      <form class="wrapper" [formGroup]="loginForm">
+        <br>
+          <ion-item>
+            <ion-label floating>Usuario</ion-label>
+            <ion-input formControlName="user"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>password</ion-label>
+            <ion-input typr="password" formControlName="pwd"></ion-input>
+          </ion-item>
+        <br>
+        <button ion-button [color]="loginForm.valid ? 'primary': 'danger'" (click)="login()" round>Login</button>
+        </form>
+      
+
+      <!-- <div class="wrapper">
         <br>
           <ion-item>
             <ion-label floating>Usuario</ion-label>
@@ -27,11 +43,11 @@
             </ion-item>
         <br>
         <button ion-button (click)="goAbout()" color="curso" round>About</button>
-      </div>
-      <div>
+          </div>
+        <div>
         <h1> Usuario => {{user}}</h1>
         <h1> Grupo => {{group}}</h1>
-      </div>
+      </div> -->
   
   
 </ion-content>
