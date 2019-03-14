@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginProvider } from '../providers/login/login';
 import { LoginProviderMock } from '../mock/loginProviderMock';
 import { EventsProvider } from '../providers/events/events';
+import { CardComponent } from '../components/card/card';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EventsProvider } from '../providers/events/events';
     HomePage,
     AboutPage,
     CostumerPage,
-    CreateAccountPage
+    CreateAccountPage,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { EventsProvider } from '../providers/events/events';
     HomePage,
     AboutPage,
     CostumerPage,
-    CreateAccountPage
+    CreateAccountPage,
+    CardComponent
   ],
   providers: [
     StatusBar,

@@ -61,6 +61,7 @@ export class HomePage {
         this.navCtrl.push(AboutPage,response);
       }, error => {
         this.events_manager.setIsLoading(false);
+        this.events_manager.setMsgToast(error.error.message);
         console.log(error);        
       });
     

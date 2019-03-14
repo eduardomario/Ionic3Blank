@@ -11,15 +11,28 @@
 </ion-header>
 
 <ion-content padding>
-    <div class="wrapper">
+    <card *ngFor="let item of students" 
+              [student]="item"
+              (click-card)="deleteCard($event)">      
+    </card>  
+  
+  <!-- <div class="wrapper">
       <div class="wrapper-info">
-        <h1>Nombre: {{data.name | myPipe:'Sin Nombre'}}</h1>
-        <h1>Apellido Paterno: {{data.app | myPipe:'Sin Nombre'}}</h1>
-        <h1>Apellido Materno: {{data.apm | myPipe:'Sin Nombre'}}</h1>
-        <h1>Email: {{data.email | myPipe:'Sin Nombre'}}</h1>
-        <br>
+          <ion-card *ngFor="let student of students" (click)="deleteCard(student.id)">
+              <ion-card-header>
+                  {{student.email}}
+              </ion-card-header>
+              <ion-card-content>
+                <ion-card-title>
+                  {{student.name}} {{student.app}} {{student.apm}}
+                </ion-card-title>
+                <p>
+                  AYUDAAAAAA
+                </p>
+              </ion-card-content>
+            </ion-card>
       </div>
-    </div>
+    </div> -->
 
   <!-- <div class="wrapper">
     <div class="wrapper-info"

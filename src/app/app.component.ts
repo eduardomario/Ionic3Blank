@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, Loading, LoadingController } from 'ionic-angular';
+import { Platform, Loading, LoadingController, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -13,7 +13,13 @@ export class MyApp {
   loading:Loading;
   
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private events_provider: EventsProvider, private loadingCtrl: LoadingController) {
+  constructor(
+    platform: Platform, 
+    statusBar: StatusBar, 
+    splashScreen: SplashScreen,
+    private events_provider: EventsProvider, 
+    private loadingCtrl: LoadingController,
+    private toastCtrl: ToastController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -34,7 +40,15 @@ export class MyApp {
               this.loading.dismiss();
             }
           });
-
+          
+          this.events_provider
+              .getMsgToast()
+              .subscribe((msg)=>{
+                this.toastCtrl.create({
+                  message:msg,
+                  duration: 3000
+                }).present();
+              });
     });
   }
 
