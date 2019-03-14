@@ -18,8 +18,8 @@ export class LoginProvider {
 
   loginService(user:String, pwd:String){
     return this.http.post(LOGIN_USER,{
-      email:user,
-      password:pwd
+      "username":user,
+      "password":pwd
     });
     
   }

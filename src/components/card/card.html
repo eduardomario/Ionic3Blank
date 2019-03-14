@@ -1,13 +1,14 @@
-<ion-card (click)="clickCard()">
+<ion-card>
   <ion-card-header>
-    {{student.email}}
+    {{student.Name}}
   </ion-card-header>
   <ion-card-content>
     <ion-card-title>
-      {{student.name}} {{student.app}} {{student.apm}}
+      Nombre: {{student.name}} {{student.lastName}} Edad: {{student.age}} 
     </ion-card-title>
     <p>
       AYUDAAAAAA
     </p>
+    <button (click)="clickCard()">Delete</button>
   </ion-card-content>
 </ion-card>

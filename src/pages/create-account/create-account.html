@@ -14,28 +14,18 @@
   <form class="wrapper" [formGroup]="createAccountForm">
       <br>
       <ion-item>
-        <ion-label floating>Usuario</ion-label>
+        <ion-label floating>Name</ion-label>
         <ion-input formControlName="name"></ion-input>
       </ion-item>
     
       <ion-item>
-        <ion-label floating>Apellido Paterno</ion-label>
-        <ion-input formControlName="app"></ion-input>
+        <ion-label floating>LastName</ion-label>
+        <ion-input formControlName="lastName"></ion-input>
       </ion-item>
       
       <ion-item>
-        <ion-label floating>Apellido Materno</ion-label>
-        <ion-input formControlName="apm"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Email</ion-label>
-        <ion-input formControlName="email"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Matricula</ion-label>
-        <ion-input formControlName="matricula"></ion-input>
+        <ion-label floating>Age</ion-label>
+        <ion-input formControlName="age"></ion-input>
       </ion-item>
     <br>
     <button ion-button (click)="createAccount()" [color]="createAccountForm.valid ? 'primary': 'danger'" round [disabled]="!createAccountForm.valid">Create</button>

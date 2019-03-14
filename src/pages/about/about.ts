@@ -22,6 +22,7 @@ export class AboutPage {
   data:any;
   colorLabel: string;
   students:any[]=[];
+  
 
   constructor(
     public navCtrl: NavController, 

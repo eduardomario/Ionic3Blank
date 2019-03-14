@@ -25,11 +25,9 @@ export class CreateAccountPage {
     private students_provider: StudentsServiceProvider) {
 
     this.createAccountForm = this.fb.group({
-      name:['', Validators.required],
-      app:['', Validators.required],
-      apm:[''],
-      email:['', Validators.required],
-      matricula:['', Validators.required],
+      "name":['', Validators.required],
+      "lastName":['', Validators.required],
+      "age":['', Validators.required],
     });
   }
 
